@@ -1,28 +1,15 @@
-.sorting-container {
-  padding: 0.7rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  margin: 0.4rem;
-  border-radius: 2rem;
-}
-
-.sorting-container > p {
-  color: grey;
-}
-
 .adjustment-btn {
   cursor: pointer;
   font-size: 1.2rem;
   color: grey;
 }
+
 .adjustment-btn:hover {
   color: var(--primary-color);
 }
 
 .dropdown-list-container {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   top: 90%;
   right: 1%;
   position: absolute;
@@ -32,8 +19,9 @@
   box-shadow: 0px 0px 19px -1px rgb(60, 60, 60);
   width: 50vw;
 }
+
 .dropdown-list-container ul {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   list-style: none;
 }
 
@@ -43,11 +31,11 @@
 }
 
 .dropdown-list-container ul li:first-child {
-  border-radius: 0.9rem 0.9rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .dropdown-list-container ul li:last-child {
-  border-radius: 0 0 0.9rem 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .dropdown-list-container ul li:hover {
@@ -66,5 +54,71 @@
 
   .dropdown-list-container {
     width: 15vw;
+  }
+}
+
+.app-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  background-color: var(--white);
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4cfc3' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  overflow: hidden;
+}
+
+.family-selector {
+  flex: 0 0 260px;
+  order: 1;
+  height: 100%;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.feed {
+  flex: 1;
+  order: 2;
+  height: 100%;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  min-width: 350px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+  flex: 0 0 260px;
+  order: 3;
+  height: 100%;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.post-listing-container {
+  margin-top: 1rem;
+}
+
+.no-bookmarks {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .profile-section {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .family-selector {
+    display: none;
+  }
+
+  .feed {
+    padding: 1rem;
+    border-left: none;
+    border-right: none;
   }
 }

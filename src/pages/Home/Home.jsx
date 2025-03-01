@@ -9,9 +9,9 @@ import { Post } from "../../components/Post/Post";
 import { useLoggedInUser } from "../../contexts/LoggedInUserProvider";
 import { CreatePostForm } from "../../components/CreatePostForm/CreatePostForm";
 import { useAuth } from "../../contexts/AuthProvider";
-import { Navbar } from "../../components/Navbar/Navbar";
 import { Header } from "../../components/Header/Header";
-import { Discover } from "../../components/Discover/Discover";
+import { FamilySelector } from "../../components/FamilySelector/FamilySelector";
+import { ProfileSection } from "../../components/ProfileSection/ProfileSection";
 
 export const Home = () => {
   const { setSortBy, sortBy, allPosts, postLoading } = usePosts();
@@ -53,42 +53,12 @@ export const Home = () => {
     <>
       {auth.isAuth && <Header />}
       <div className="app-container">
-        {auth.isAuth && <Navbar />}
+        <div className="family-selector">
+          <FamilySelector />
+        </div>
 
-        <main className="feed">
+        <div className="feed">
           <CreatePostForm />
-
-          <div className="sorting-container">
-            <p>{sortBy} Posts</p>
-            <TbAdjustmentsHorizontal
-              onClick={() => setIsAdjustmentOn(!isAjustmentOn)}
-              className="adjustment-btn"
-            />
-            {isAjustmentOn && (
-              <div className="dropdown-list-container">
-                <ul>
-                  {sortTypes.map((type) => (
-                    <AttentionSeeker
-                      key={type}
-                      duration={1000}
-                      effect="headShake"
-                    >
-                      <li
-                        className={type === sortBy ? "isActive" : ""}
-                        onClick={() => {
-                          setSortBy(type);
-                          setIsAdjustmentOn(!isAjustmentOn);
-                        }}
-                        key={type}
-                      >
-                        {type}
-                      </li>{" "}
-                    </AttentionSeeker>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
 
           {!postLoading && (
             <div className="post-listing-container">
@@ -104,9 +74,11 @@ export const Home = () => {
               )}
             </div>
           )}
-        </main>
+        </div>
 
-        {auth.isAuth && <Discover className="discover" />}
+        <div className="profile-section">
+          <ProfileSection />
+        </div>
       </div>
     </>
   );

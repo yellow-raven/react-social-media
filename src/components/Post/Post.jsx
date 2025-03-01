@@ -274,7 +274,7 @@ export const Post = ({ post }) => {
 
               <div className="comments-textarea-btn-container">
                 <textarea
-                  placeholder="Quack your reply!"
+                  placeholder="Write a comment..."
                   onChange={(e) => setCommentData({ text: e.target.value })}
                   value={commentData?.text}
                   type="text"

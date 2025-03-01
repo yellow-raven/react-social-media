@@ -12,18 +12,42 @@ import {
   CgProfile,
   IoMdLogOut,
   FaFeather,
+  MdFamilyRestroom,
 } from "../../utils/icons";
 
 export const Navbar = () => {
   const [isCreateNewPostClicked, setIsCreateNewPostClicked] = useState(false);
+  const [selectedFamily, setSelectedFamily] = useState("lebas-family");
 
   const { auth, handleLogout } = useAuth();
   const getActiveStyle = ({ isActive }) => ({
     color: isActive ? "rgb(29, 155, 240)" : "white",
   });
+
+  const families = [
+    { id: "lebas-family", name: "Lebas Family" },
+    { id: "canadian-family", name: "Canadian Family" },
+  ];
+
   return (
     <nav className="navbar">
       <ul>
+        <li>
+          <div className="family-selector">
+            <select 
+              value={selectedFamily}
+              onChange={(e) => setSelectedFamily(e.target.value)}
+              className="family-dropdown"
+            >
+              {families.map(family => (
+                <option key={family.id} value={family.id}>
+                  {family.name}
+                </option>
+              ))}
+              <option value="new">+ Join New Family</option>
+            </select>
+          </div>
+        </li>
         <li>
           <NavLink className="navlink" style={getActiveStyle} to="/">
             {<RiHomeWifiLine className="navlink-icon" />}

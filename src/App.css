@@ -1,40 +1,45 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
 }
 .App {
-  background-color: black;
+  background-color: #FAFAFA;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 :root {
-  --primary-color: rgb(29, 155, 240);
-  --primary-color-hover: rgb(57, 176, 255);
-  --white: #ffffff;
-  --hover-background: rgb(41, 41, 41);
-  --border-color: rgb(41, 41, 41);
+  --primary-color: #30001413;
+  --primary-color-hover: #30001450;
+  --white: #FFFFFF;
+  --hover-background: #FAFAFA;
+  --border-color: #FAFAFA;
+  --text-primary: #262626;
+  --text-secondary: #575757;
+  --font-family: 'Playfair Display', serif;
+  --logo-font: 'Playfair Display', sans-serif; 
 }
+
 a {
   cursor: pointer;
   text-decoration: none;
-}
-
-.app-container {
-  display: flex;
-  flex-flow: column nowrap;
+  font-family: var(--font-family);
+  color: var(--text-primary);
 }
 
 .feed {
-  background-color: black;
-  color: white;
-  height: 90vh;
+  background-color: var(--hover-background);
+  height: calc(100vh - 3.5rem);
   overflow: auto;
   order: 2;
 }
+
 .navbar {
   order: 3;
   position: sticky;
-  bottom: 0px;
+  background-color: #FFFFFF;
 }
 
 .discover {
@@ -49,7 +54,7 @@ a {
 }
 
 .username {
-  color: grey;
+  color: var(--text-secondary);
 }
 
 @media (min-width: 768px) {
@@ -58,8 +63,6 @@ a {
   }
 
   .feed {
-    height: 90vh;
-    overflow: auto;
     width: 70%;
   }
 
@@ -73,8 +76,6 @@ a {
 
 @media (min-width: 900px) {
   .feed {
-    height: 90vh;
-    overflow: auto;
     width: 50%;
   }
 
@@ -87,7 +88,7 @@ a {
   .discover {
     display: flex;
     order: 3;
-    background-color: black;
+    background-color: #FFFFFF;
     width: 35%;
     padding: 0 1rem;
   }
@@ -95,8 +96,6 @@ a {
 
 @media (min-width: 1200px) {
   .feed {
-    height: 90vh;
-    overflow: auto;
     width: 50%;
   }
 
@@ -105,12 +104,5 @@ a {
     position: sticky;
     top: 0;
     width: 20%;
-  }
-  .discover {
-    display: flex;
-    order: 3;
-    background-color: black;
-    width: 30%;
-    padding: 0 1.5rem;
   }
 }

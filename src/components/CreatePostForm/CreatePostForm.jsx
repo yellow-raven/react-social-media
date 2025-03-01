@@ -79,7 +79,7 @@ export const CreatePostForm = ({ setIsCreateNewPostClicked, className }) => {
                 setPostForm((prev) => ({ ...prev, content: e.target.value }))
               }
               value={postForm.content}
-              placeholder="What is happening?!"
+              placeholder="Share a family moment..."
             />
             {setIsCreateNewPostClicked && (
               <IoMdClose
@@ -139,7 +139,7 @@ export const CreatePostForm = ({ setIsCreateNewPostClicked, className }) => {
                 disabled={!postForm.content && !postForm.mediaUrl}
                 type="submit"
               >
-                Quack
+                Post
               </button>
             </div>
           </div>

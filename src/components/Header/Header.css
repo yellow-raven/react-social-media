@@ -1,31 +1,30 @@
 .header {
   position: sticky;
   top: 0;
-  padding: 2rem;
+  left: 0;
+  right: 0;
+  padding: 1rem;
   font-size: 1.5rem;
+  height: 3.5rem;
   display: flex;
   align-items: center;
-  font-weight: 600;
-  background-color: black;
-  padding-left: 4.2vw;
-  height: 10vh
-}
-.header > p {
-  display: none;
-  color: white;
-  margin-left: 10px;
-  cursor: pointer;
+  justify-content: center;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-.header-logo {
-  color: white;
+.header h1 {
+  font-family: var(--logo-font);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text-light);
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: -0.07em;
+  transform: scaleX(1.08);
 }
 
-@media (min-width: 768px) {
-  .header > p {
-    color: white;
-    margin-left: 15px;
-    display: inline-block;
-  }
+.big-cap {
+  font-size: 1.2em;
 }
